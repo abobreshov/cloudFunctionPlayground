@@ -1,0 +1,13 @@
+steps:
+  - name: 'playground_deploy'
+    args:
+      - gcloud
+      - beta
+      - functions
+      - deploy
+      - main
+      - --region=europe-west2
+      - --source=.
+      - --trigger-http
+      - --runtime=python310
+      - --allow-unauthenticated
