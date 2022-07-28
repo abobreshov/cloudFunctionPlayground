@@ -1,5 +1,5 @@
 steps:
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:alpine'
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:slim'
     args:
       - gcloud
       - beta
@@ -8,6 +8,7 @@ steps:
       - main
       - --region=europe-west2
       - --source=.
+      - --entry-point=main
       - --trigger-http
       - --runtime=python310
       - --allow-unauthenticated
