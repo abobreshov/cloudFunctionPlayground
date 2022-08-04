@@ -1,4 +1,9 @@
 import socket
+import google.cloud.logging
+import logging
+
+client = google.cloud.logging.Client()
+client.setup_logging()
 
 
 def main(request):
@@ -13,6 +18,7 @@ def main(request):
     hostname = socket.gethostname()
     local_ip = socket.gethostbyname(hostname)
     request_json = request.get_json()
+    logging.info(f'{local_ip} - {request_json}')
     if request.args and 'message' in request.args:
         return request.args.get('message') + ' from ' + local_ip
     elif request_json and 'message' in request_json:
