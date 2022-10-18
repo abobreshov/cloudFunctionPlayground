@@ -7,7 +7,7 @@ steps:
       - deploy
       - main
       - --region=europe-west2
-      - --source=.
+      - --source=./test
       - --entry-point=main
       - --trigger-http
       - --runtime=python310
